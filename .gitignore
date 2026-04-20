@@ -12,6 +12,8 @@ build
 .idea
 .vscode
 *.log
+.db
+dynamodb_data
 # Ignore CDK context files
 cdk.context.json
 cdk.out
