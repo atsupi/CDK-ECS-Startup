@@ -1,7 +1,12 @@
 import { useEffect, useState } from 'react';
 
+interface Todo {
+  id: number;
+  task: string;
+}
+
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
   const [task, setTask] = useState('');
 
   // Fetching from relative path '/api/todos'

@@ -1,7 +1,7 @@
 # backend/Dockerfile
 
 # Step 1: Use a lightweight Node.js image
-FROM node:18-slim
+FROM node:20-slim
 
 # Step 2: Create app directory
 WORKDIR /usr/src/app

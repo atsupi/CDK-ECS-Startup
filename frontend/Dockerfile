@@ -1,7 +1,7 @@
 # frontend/Dockerfile
 
 # Stage 1: Build Stage
-FROM node:18 AS build-stage
+FROM node:20 AS build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
