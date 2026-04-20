@@ -1,0 +1,40 @@
+services:
+  # 1. Backend: Node.js API
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - TABLE_NAME=TodoTable
+      - REGION=local
+      - DYNAMODB_ENDPOINT=http://dynamodb:8000
+      - AWS_ACCESS_KEY_ID=local
+      -AWS_SECRET_ACCESS_KEY=local
+    depends_on:
+      - dynamodb
+
+  # 2. Frontend: React + Nginx
+  # We use port 8080 locally to avoid conflicts with system defaults
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+  # 3. Database: DynamoDB Local
+  # This replaces the AWS DynamoDB service for local testing
+  dynamodb:
+    image: amazon/dynamodb-local
+    container_name: dynamodb
+    ports:
+      - "8000:8000"
+    # Optional: Persist data locally so it survives container restarts
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"
+    volumes:
+      - ./dynamodb_data:/home/dynamodblocal/data
+    user: root

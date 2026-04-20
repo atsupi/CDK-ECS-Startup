@@ -1,0 +1,129 @@
+frontend/node_modules
+backend/node_modules
+node_modules
+dist
+build
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.DS_Store
+.idea
+.vscode
+*.log
+# Ignore CDK context files
+cdk.context.json
+cdk.out
+# Ignore CDK asset files
+cdk-assets.json
+# Ignore CDK cache files
+cdk.cache
+# Ignore CDK diff files
+cdk.diff.json
+# Ignore CDK synth files
+cdk.synth.json
+# Ignore CDK deploy files
+cdk.deploy.json
+# Ignore CDK destroy files
+cdk.destroy.json
+# Ignore CDK metadata files
+cdk.metadata.json
+# Ignore CDK stack files
+cdk.stack.json
+# Ignore CDK template files
+cdk.template.json
+# Ignore CDK test files
+cdk.test.json
+# Ignore CDK coverage files
+cdk.coverage.json
+# Ignore CDK report files
+cdk.report.json
+# Ignore CDK log files
+cdk.log
+# Ignore CDK debug files
+cdk.debug
+# Ignore CDK error files
+cdk.error
+# Ignore CDK warning files
+cdk.warning
+# Ignore CDK info files
+cdk.info
+# Ignore CDK trace files
+cdk.trace
+# Ignore CDK performance files
+cdk.performance
+# Ignore CDK metrics files
+cdk.metrics
+# Ignore CDK monitoring files
+cdk.monitoring
+# Ignore CDK alert files
+cdk.alert
+# Ignore CDK notification files
+cdk.notification
+# Ignore CDK audit files
+cdk.audit
+# Ignore CDK compliance files
+cdk.compliance
+# Ignore CDK security files
+cdk.security
+# Ignore CDK vulnerability files
+cdk.vulnerability
+# Ignore CDK license files
+cdk.license
+# Ignore CDK dependency files
+cdk.dependency
+# Ignore CDK package files
+cdk.package
+# Ignore CDK module files
+cdk.module
+# Ignore CDK component files
+cdk.component
+# Ignore CDK resource files
+cdk.resource
+# Ignore CDK stack files
+cdk.stack
+# Ignore CDK app files
+cdk.app
+# Ignore CDK construct files
+cdk.construct
+# Ignore CDK library files
+cdk.library
+# Ignore CDK framework files
+cdk.framework
+# Ignore CDK tool files
+cdk.tool
+# Ignore CDK utility files
+cdk.utility
+# Ignore CDK helper files
+cdk.helper
+# Ignore CDK script files
+cdk.script
+# Ignore CDK command files
+cdk.command
+# Ignore CDK configuration files
+cdk.config
+# Ignore CDK settings files
+cdk.settings
+# Ignore CDK environment files
+cdk.environment
+# Ignore CDK variable files
+cdk.variable
+# Ignore CDK constant files
+cdk.constant
+# Ignore CDK function files
+cdk.function
+# Ignore CDK class files
+cdk.class
+# Ignore CDK interface files
+cdk.interface
+# Ignore CDK type files
+cdk.type
+# Ignore CDK enum files
+cdk.enum
+# Ignore CDK namespace files
+cdk.namespace
+# Ignore CDK package-lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
