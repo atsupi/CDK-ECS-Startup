@@ -1,0 +1,42 @@
+name: AWS CDK Deploy
+
+on:
+  push:
+    branches: [ main ] # Deploy when push to main
+
+permissions:
+  id-token: write   # Required for requesting the JWT (OIDC)
+  contents: read    # Required for checkout
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout the repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Steup Node.js (for CDK and building apps)
+      - name: Setup Node
+        uses: actions/checkout@v4
+        with:
+          node-version: '20'
+
+      # 3. Authenticate with AWS via OIDC
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_CDK_ROLE_ARN }} # e.g., arn:aws:iam::123456789012:role/GitHubActionRole
+          aws-region: ap-northeast-1
+
+      # 4. Install dependencies for CDK and Apps
+      - name: Install dependencies
+        run: |
+          npm install
+          cd backend && npm install
+          cd ../frontend && npm install
+
+      # 5. Build and Deploy with CDK
+      # This handles Docker build, ECR push, and ECS update automatically
+      - name: CDK Deploy
+        run: npx cdk deploy --require-approval never
