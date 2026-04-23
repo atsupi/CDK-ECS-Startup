@@ -18,7 +18,7 @@ jobs:
 
       # 2. Steup Node.js (for CDK and building apps)
       - name: Setup Node
-        uses: actions/seyup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
 
