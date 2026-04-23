@@ -34,7 +34,7 @@ jobs:
         run: |
           npm install
           cd backend && npm install
-          cd ../frontend && npm install
+          cd ../frontend && npm install --legacy-peer-deps
 
       # 5. Build and Deploy with CDK
       # This handles Docker build, ECR push, and ECS update automatically
