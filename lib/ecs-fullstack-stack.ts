@@ -63,7 +63,7 @@ export class EcsFullStackStack extends cdk.Stack {
 
     frontendTask.addContainer('FrontendContainer', {
       image: ecs.ContainerImage.fromAsset('./frontend'),
-      portMappings: [{ containerPort: 80 }],
+      portMappings: [{ containerPort: 8080 }],
     });
 
     const frontendService = new ecs.FargateService(this, 'FrontendService', {
