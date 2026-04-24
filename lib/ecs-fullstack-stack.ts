@@ -75,8 +75,12 @@ export class EcsFullStackStack extends cdk.Stack {
     // 7. Path-based Routing configuration
     // Default target (Frontend)
     listener.addTargets('FrontendTarget', {
-      port: 80,
+      port: 8080,
       targets: [frontendService],
+      healthCheck: {
+        path: '/',
+        port: 8080
+      },
     });
 
     // Forward /api/* requests to Backend
