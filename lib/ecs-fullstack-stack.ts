@@ -61,9 +61,19 @@ export class EcsFullStackStack extends cdk.Stack {
       memoryLimitMiB: 512,
     });
 
+    const frontendLogGroup = new cdk.aws_logs.LogGroup(this, 'FrontendLogGroup', {
+      logGroupName: '/ecs/frontend-logs',
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      retention: cdk.aws_logs.RetentionDays.ONE_WEEK,
+    });
+
     frontendTask.addContainer('FrontendContainer', {
       image: ecs.ContainerImage.fromAsset('./frontend'),
       portMappings: [{ containerPort: 8080 }],
+      logging: ecs.LogDrivers.awsLogs({
+        logGroup: frontendLogGroup,
+        streamPrefix: 'ecs',
+      }),
     });
 
     const frontendService = new ecs.FargateService(this, 'FrontendService', {
