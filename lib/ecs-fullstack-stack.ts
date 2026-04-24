@@ -79,7 +79,7 @@ export class EcsFullStackStack extends cdk.Stack {
       targets: [frontendService],
       healthCheck: {
         path: '/',
-        port: 8080
+        port: '8080'
       },
     });
 
