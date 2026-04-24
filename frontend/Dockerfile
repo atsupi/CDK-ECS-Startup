@@ -9,7 +9,8 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Production Stage
-FROM nginx:stable-alpine
+#FROM nginx:stable-alpine
+FROM nginxinc/nginx-unprivileged:stable-alpine
 
 # Copy the build output from Stage 1
 COPY --from=build-stage /app/dist /usr/share/nginx/html
