@@ -3,5 +3,10 @@
     "types": ["node"],
     "jsx": "react-jsx",
     "noEmit": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "cdk.out",
+    "frontend"
+  ]
 }
