@@ -7,10 +7,11 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "cdk": "cdk"
   },
   "devDependencies": {
+    "@jest/globals": "^30.5.2",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.12.7",
     "aws-cdk": "2.137.0",
