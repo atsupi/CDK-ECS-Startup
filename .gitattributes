@@ -44,6 +44,23 @@ uv.lock linguist-generated=true -diff
 Pipfile.lock linguist-generated=true -diff
 *.ipynb linguist-detectable=false
 
+# Tooling & Linter configs (exclude from GitHub language stats)
+vite.config.* linguist-vendored
+vitest.config.* linguist-vendored
+eslint.config.* linguist-vendored
+.eslintrc* text eol=lf linguist-vendored
+.prettierrc* text eol=lf linguist-vendored
+tsconfig*.json linguist-vendored
+
+# --------------------------------------------------
+# AWS CDK & Infrastructure as Code
+# --------------------------------------------------
+cdk.json text eol=lf
+cdk.context.json text eol=lf linguist-generated=true -diff
+cdk.out/** linguist-generated=true -diff
+**/__snapshots__/** linguist-generated=true -diff
+*.snap text eol=lf linguist-generated=true -diff
+
 # --------------------------------------------------
 # Shell, Config & Windows-specific files
 # --------------------------------------------------
