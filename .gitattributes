@@ -51,6 +51,7 @@ eslint.config.* linguist-vendored
 .eslintrc* text eol=lf linguist-vendored
 .prettierrc* text eol=lf linguist-vendored
 tsconfig*.json linguist-vendored
+jest.config.js linguist-vendored
 
 # --------------------------------------------------
 # AWS CDK & Infrastructure as Code
