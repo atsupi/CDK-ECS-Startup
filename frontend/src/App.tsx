@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 
 interface Todo {
-  id: number;
+  id: string;
   task: string;
+  createdAt?: string;
+  done?: boolean;
 }
 
 function App() {
