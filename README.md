@@ -4,6 +4,12 @@ AWS CDK（TypeScript）で、React製ToDoアプリをAWS上に構築するサン
 
 フロントエンドとバックエンドをそれぞれECS on Fargateで実行し、データをAmazon DynamoDBに保存します。
 
+## 設計解説記事 (Zenn)
+
+本リポジトリのアーキテクチャ選定理由、ローカル環境と本番AWS環境の差異吸収の仕組み、テスト・CI戦略については、以下の技術記事で詳しく解説しています。
+
+- **[AWS CDKで始めるECS Fargateフルスタック構成 (Zenn) ](https://zenn.dev/atsupi/articles/fd116194f92631)**
+
 ## 構成
 
 ```text
